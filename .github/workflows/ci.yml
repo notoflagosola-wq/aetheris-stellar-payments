@@ -16,11 +16,12 @@ jobs:
         with:
           targets: wasm32v1-none
           components: rustfmt
+      - run: cargo install stellar-cli --locked --version 28.0.0
       - uses: Swatinem/rust-cache@v2
       - run: cargo fmt --all -- --check
       - run: cargo test --workspace
       - run: cargo clippy --workspace --all-targets -- -D warnings
-      - run: cargo build --package aetheris-channel --target wasm32v1-none --release
+      - run: stellar contract build --package aetheris-channel
 
   server:
     runs-on: ubuntu-latest
@@ -50,8 +51,6 @@ jobs:
           cache: npm
           cache-dependency-path: frontend/package-lock.json
       - run: npm ci
-        working-directory: frontend
-      - run: npm install-scripts approve esbuild
         working-directory: frontend
       - run: npm test
         working-directory: frontend
