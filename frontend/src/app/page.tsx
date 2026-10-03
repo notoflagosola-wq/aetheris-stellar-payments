@@ -257,7 +257,6 @@ export default function Home() {
         valid_until: latestVoucher.validUntil,
         signature: fromHex(latestVoucher.signature),
       });
-      await transaction.signAuthEntries({ address: wallet });
       const submitted = await transaction.signAndSend();
       setSettledAmount(latestVoucher.amount);
       setLatestVoucher(null);
