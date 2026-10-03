@@ -1,0 +1,32 @@
+{
+  "name": "@aetheris/dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@noble/ed25519": "^2.2.3",
+    "@stellar/freighter-api": "^6.0.1",
+    "@stellar/stellar-sdk": "^17.2.1",
+    "next": "^16.3.8",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.3"
+  },
+  "engines": {
+    "node": ">=20.9"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}
